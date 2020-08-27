@@ -26,7 +26,7 @@
             <div class="row" v-show="login">
               <div class="col-lg-12">
                 <!-- Default form login -->
-                <form class="text-center border border-light p-5" action="#!">
+                <form class="text-center border border-dark border-top-0 border-right-0 p-5" action="#!">
 
                   <p class="h4 mb-4">Sign in</p>
 
@@ -60,7 +60,7 @@
             <div class="row" v-show="register">
               <div class="col-lg-12">
                   <!-- Default form register -->
-                  <form class="text-center border border-light p-5" action="#!">
+                  <form class="text-center border border-dark border-top-0 border-right-0 p-5" action="#!">
 
                     <p class="h4 mb-4">Sign up</p>
 
@@ -150,7 +150,7 @@ export default {
 
  .box-index{
   z-index: 1;
-  margin-top: 30%;
+  margin-top: 10%;
   
 } 
 

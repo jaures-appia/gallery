@@ -2,15 +2,15 @@
   <div class="index2">
     <my-header></my-header>
     <div class="container ">
-        <div class="row mt-5" v-show="seeProfile">
-          <div class="col-md-8 col-lg-8 mx-auto">
+        <div class="row mt-5 mb-5" v-show="seeProfile">
+          <div class="col-md-8 col-lg-8 mx-auto mb-5">
       
       
             <!-- Section: Block Content -->
             <section>
       
               <!-- Card -->
-              <div class="card testimonial-card">
+              <div class="card testimonial-card ">
       
                   <!-- Background color -->
                   <div class="card-up info-color-dark p-3 white-text">
@@ -49,10 +49,10 @@
         </div>
 
         <!-- update photo -->
-        <div class="row mt-5" v-show="modifyProfile">
+        <div class="row mt-5 mb-5" v-show="modifyProfile">
             <div class="col-lg-8 offset-lg-2">
                 <!-- Default form contact -->
-                <form class="text-center border border-light p-5" action="#!">
+                <form class="text-center border border-dark border-top-0 border-right-0 p-5" action="#!">
 
                 <p class="h4 mb-4">Edit Profile</p>
 

@@ -177,7 +177,7 @@
         </div>
 
         <!-- pagination -->
-        <div class="row mb-1 mt-1">
+        <div class="row mb-5 mt-2">
             <div class="col-lg-4 offset-lg-4">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination pg-blue">

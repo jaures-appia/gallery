@@ -3,7 +3,7 @@
     <my-header></my-header>
     <div class="container ">
        <!-- single photo -->
-        <div class="row mt-5" v-show="seePhoto">
+        <div class="row mt-5 mb-5" v-show="seePhoto">
             <div class="col-lg-8 offset-lg-2">
                 <!-- Card -->
                 <div class="card booking-card">
@@ -40,10 +40,10 @@
 
 
         <!-- update photo -->
-        <div class="row mt-5" v-show="modifyPhoto">
+        <div class="row mt-5 mb-5" v-show="modifyPhoto">
             <div class="col-lg-8 offset-lg-2">
                 <!-- Default form contact -->
-                <form class="text-center border border-light p-5" action="#!">
+                <form class="text-center border border-dark border-top-0 border-right-0 p-5" action="#!">
         
                     <p class="h4 mb-4">Edit Photo</p>
         

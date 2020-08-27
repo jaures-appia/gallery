@@ -2,10 +2,10 @@
   <div class="index2">
     <my-header></my-header>
     <div class="container ">
-         <div class="row mt-5">
+         <div class="row mt-5 mb-5">
             <div class="col-lg-6 offset-lg-3">
                 <!-- Default form contact -->
-                <form class="text-center border border-light p-5" action="#!">
+                <form class="text-center border border-dark border-top-0 border-right-0 p-5" action="#!">
 
                 <p class="h4 mb-4">Add New Photo</p>
 

@@ -1,0 +1,33 @@
+body, html {
+  height: 100%;
+  margin:0;
+}
+.box-index{
+    margin-top: 30%;
+}
+
+.bg { 
+  background-image: url("https://paulryan.com.au/wp-content/uploads/2015/01/high-resolution-wallpapers-25.jpg");
+  /* center the background image vertically and horizontally*/
+  background-position: center center;
+
+  /* removing tilings and repeatition*/
+  background-repeat: no-repeat;
+
+  /* to scale image to fit the screen */
+  background-size: cover;
+
+  /* fixed viewport against scroll ups and downs*/
+  background-attachment: fixed;
+
+  height:1500px;
+  z-index: -1;
+  }
+
+  /* for responsiveness: changing pictures after 760px, mostly same pcitures of small size is used.*/
+@media only screen and (max-width: 760px) {
+.bg {
+  /* to improve page load speed on mobile internet connections */
+  background-image: url('https://images.unsplash.com/photo-1554166693-4518329faec1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+}
+}

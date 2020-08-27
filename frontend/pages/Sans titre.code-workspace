@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../learn_node"
+		},
+		{
+			"path": "../../gallery_photo/dg-portofolio"
+		},
+		{
+			"path": "../../gallery_photo/dg-vuesjs"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

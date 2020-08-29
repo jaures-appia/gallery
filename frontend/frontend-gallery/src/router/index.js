@@ -25,7 +25,7 @@ Vue.use(VueRouter)
     component: AddPhoto
   },
   {
-    path: '/single-photo',
+    path: '/single-photo/:photoID',
     name: 'SinglePhoto',
     component: SinglePhoto
   },

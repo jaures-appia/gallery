@@ -10,7 +10,7 @@
 
                 <!-- Card image -->
                 <div class="view overlay">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="Card image cap">
+                    <img class="card-img-top" :src="photo.photoUrl" alt="Card image cap">
                     <a href="#!">
                     <div class="mask rgba-white-slight"></div>
                     </a>
@@ -20,12 +20,12 @@
                 <div class="card-body">
 
                     <!-- Title -->
-                    <small class="text-muted float-right">Ajouté 01-01-2020</small>
-                    <h4 class="card-title font-weight-bold">La Sirena restaurant</h4>
+                    <small class="text-sm text-muted float-right">Ajouté le {{ photo.createdAt }}</small>
+                    <h4 class="card-title font-weight-bold">{{ photo.title }}</h4>
                     
                 
                     <!-- Text -->
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">{{ photo.descrciption }}</p>
                     <hr class="my-2">
                     <!-- Button -->
                     <a href="#" class="btn btn-info btn-rounded p-1 mx-0 mb-0 mr-2" v-on:click.prevent="isModifyPhoto()">Modifier</a>
@@ -90,6 +90,7 @@
 // @ is an alias to /src
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import axios from 'axios'
 
 export default {
   name: 'SinglePhoto',
@@ -100,7 +101,9 @@ export default {
   data(){
     return{
       seePhoto: true,
-      modifyPhoto: false
+      modifyPhoto: false,
+      id: this.$route.params.photoID,
+      photo: null,
     }
   },
   methods:{
@@ -113,6 +116,17 @@ export default {
         this.modifyPhoto = false
     }
   },
+  mounted(){
+    axios
+    .get('http://localhost:3000/photos/'+this.id)
+    .then((res) => {
+      console.log(res)
+      this.photo = res.data
+    })
+    .catch((e) => {
+      console.log(e)
+    })
+  }
 }
 </script>
 

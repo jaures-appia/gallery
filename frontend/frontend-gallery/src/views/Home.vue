@@ -168,12 +168,6 @@ export default {
 <style scoped>
 
 
- .box-index{
-  z-index: ;
-  margin-top: ;
-  
-} 
-
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 @keyframes showTopText {
   0% { transform: translate3d(0, 100%, 0); }

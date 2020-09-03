@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- Footer -->
-            <footer class="page-footer font-small blue sticky-bottom"> 
+            <footer class="page-footer font-small blue sticky-bottom mt-5"> 
 
                 <!-- Copyright -->
                 <div class="footer-copyright text-center py-3">© 2018 Copyright:

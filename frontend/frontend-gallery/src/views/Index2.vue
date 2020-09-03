@@ -31,7 +31,7 @@
                           <!-- Title -->
                           <p class="card-title text-uppercase font-weight-bold mt-1 mb-3">{{ photo.title }}</p>
                           <!-- Text -->
-                          <p class="text-muted font-small mb-1">{{ photo.descrciption }}</p>
+                          <p class="text-muted font-small mb-1">{{ photo.description }}</p>
                           <small class="text-muted float-left">{{ photo.createdAt }}</small>
               
                         </div>
@@ -104,7 +104,6 @@ export default {
     axios
     .get('http://localhost:3000/photos')
     .then((res) => {
-      console.log(res)
       this.photos = res.data
     })
     .catch((e) => {

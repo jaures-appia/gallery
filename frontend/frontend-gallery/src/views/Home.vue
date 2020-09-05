@@ -97,28 +97,28 @@
 
                     <p class="h4 mb-4">Sign up</p>
 
-                    <div class="form-row mb-4">
-                      <div class="col">
-                        <!-- First name -->
-                        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
-                      </div>
-                      <div class="col">
-                        <!-- Last name -->
-                        <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
-                      </div>
-                    </div>
+                    
+
+                    <!-- Username -->
+                    <input type="text" id="defaultRegisterFormUsername" class="form-control mb-4" v-model="username"  placeholder="Username">
 
                     <!-- E-mail -->
-                    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+                    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" v-model="email"  placeholder="E-mail">
 
                     <!-- Password -->
-                    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    <input type="password" id="defaultRegisterFormPassword" class="form-control" v-model="password" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                         At least 8 characters and 1 digit
                     </small>
 
+                    <!-- Re-Password -->
+                    <input type="password" id="" class="form-control" v-model="rePassword" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                        passwords are different
+                    </small>
+
                     <!-- Sign up button -->
-                    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+                    <button class="btn btn-info my-4 btn-block" v-on:click.prevent="addUser()" type="submit">Sign in</button>
 
                     <!-- login -->
                     <p>You are a member?
@@ -139,7 +139,7 @@
 
 <script>
 // @ is an alias to /src
-// import Header from '../components/Header.vue'
+import axios from 'axios'
 
 export default {
   name: 'Home',
@@ -149,7 +149,11 @@ export default {
   data(){
     return{
       login: true,
-      register: false
+      register: false,
+      username: null,
+      email: null,
+      password: null,
+      rePassword: null
     }
   },
   methods:{
@@ -160,6 +164,24 @@ export default {
     isRegister(){
       this.login = false,
       this.register = true
+    },
+    addUser(){
+      // console.log(this.username, this.email, this.password, this.rePassword,)
+      axios({
+        method: 'post',
+        url: 'http://localhost:3000/users/',
+        data: {
+          username: this.username,
+          email: this.email,
+          password: this.password,
+          avatar: "https://icon-library.com/images/avatar-icon-png/avatar-icon-png-26.jpg"
+        }
+      })
+      .then((res) => {
+        let ID = res.data.id
+        this.$router.push({name: 'Profile', params: {userID: ID}})
+      })
+      .catch((e)=>console.log(e))
     },
   },
 }

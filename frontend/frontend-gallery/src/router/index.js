@@ -30,7 +30,7 @@ Vue.use(VueRouter)
     component: SinglePhoto
   },
   {
-    path: '/profile',
+    path: '/profile/:userID',
     name: 'Profile',
     component: Profile
   },

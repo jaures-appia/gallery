@@ -15,13 +15,13 @@
                   <!-- Background color -->
                   <div class="card-up info-color-dark p-3 white-text">
                     <span class="float-right my-icon-edit" style="cursor: pointer" v-on:click="isModifyProfile"><i class="fas fa-edit fa-2x"></i></span>
-                    <p class="font-weight-normal mb-0">Username</p>
+                    <p class="font-weight-normal mb-0">{{ username }}</p>
                     
                   </div>
       
                   <!-- Avatar -->
                   <div class="avatar mx-auto white">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%289%29.jpg" class="rounded-circle" alt="woman avatar">
+                    <img :src="avatar" class="rounded-circle" alt="woman avatar">
                   </div>
       
                   <!-- Content -->
@@ -57,15 +57,21 @@
                 <p class="h4 mb-4">Edit Profile</p>
 
                 <div class="z-depth-1-half mb-4">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%289%29.jpg" class="rounded-circle img-fluid"
+                    <img :src="avatar" class="rounded-circle img-fluid"
                     alt="example placeholder">
                 </div>
 
                 <!-- Name -->
-                <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Username">
+                <input type="text" id="defaultContactFormName" v-model="username" class="form-control mb-4" placeholder="Username">
+
+                <!-- email -->
+                <input type="email" id="defaultContactFormEmail" v-model="email" class="form-control mb-4" placeholder="email">
+
+                <!-- avatar -->
+                <input type="text" id="defaultContactFormAvatar" v-model="avatar" class="form-control mb-4" placeholder="avatar">
 
                 <!-- photo -->
-                <div class="input-group mb-4">
+                <!-- <div class="input-group mb-4">
                     <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                     </div>
@@ -74,10 +80,10 @@
                         aria-describedby="inputGroupFileAddon01">
                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- password -->
-                <input type="password" id="defaultContactFormName" class="form-control mb-4" placeholder="Password">
+                <input type="password" id="defaultContactFormPwd" v-model="password" class="form-control mb-4" placeholder="Password">
 
                 <!-- Send button -->
                 <input class="btn btn-info btn-block" type="submit" value="Validate" v-on:click.prevent="isSeeProfile">
@@ -95,7 +101,7 @@
 <script>
 // @ is an alias to /src
 import Header from '../components/Header.vue'
-// import Footer from '../components/Footer.vue'
+import axios from 'axios'
 
 export default {
   name: 'Profile',
@@ -105,7 +111,12 @@ export default {
   data(){
     return{
       seeProfile: true,
-      modifyProfile: false
+      modifyProfile: false,
+      id: this.$route.params.userID,
+      username: null,
+      email: null,
+      avatar: null,
+      password: null,
     }
   },
   methods:{
@@ -116,8 +127,45 @@ export default {
     isSeeProfile(){
         this.seeProfile = true,
         this.modifyProfile = false
-    }
+    },
+    updateAndSeePhoto(){
+      axios({
+        method: 'put',
+        url: 'http://localhost:3000/users/'+this.id,
+        data: {
+          username: this.username,
+          email: this.email,
+          avatar: this.avatar,
+          password: this.password,
+        }
+      })
+      .then((res) => {
+        this.username = res.data.username
+        this.email = res.data.email
+        this.avatar = res.data.avatar
+        this.password = res.data.password
+        this.seeProfile = true,
+        this.modifyProfile = false
+      })
+      .catch((e)=>console.log(e))
+    
+        
+    },
   },
+  mounted(){
+    axios
+    .get('http://localhost:3000/users/'+this.id)
+    .then((res) => {
+     console.log(res.data)
+      this.username = res.data.username
+      this.email = res.data.email
+      this.avatar = res.data.avatar
+      this.password = res.data.password
+    })
+    .catch((e) => {
+      console.log(e)
+    })
+  }
 }
 </script>
 

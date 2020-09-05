@@ -29,15 +29,23 @@
       "title": "my best photo",
       "description": "NOTE: async/await is part of ECMAScript 2017 and is not supported in Internet Explorer and older browsers, so use with caution.",
       "photoUrl": "https://image.freepik.com/photos-gratuite/image-du-cerveau-humain_99433-298.jpg",
-      "createAt": 1599148099132,
       "id": 8
+    }
+  ],
+  "users": [
+    {
+      "username": "izoNikita",
+      "email": "izo@nikita.com",
+      "password": "12345678",
+      "avatar": "https://cdn.pixabay.com/photo/2015/06/19/21/24/the-road-815297__340.jpg",
+      "id": 1
     },
     {
-      "title": "profile fb",
-      "description": " functions for dealing with concurrent requests.\n\naxios.all(iterable) axios.spread(callback)",
-      "photoUrl": "https://lh3.googleusercontent.com/proxy/ot94k-SUyem6003nNwYInteYQhP99GFPnoRi4rkVWUBCIOdZktSmGjoKAAv8Sad-wfvPlsDE7l9XtqWwnSq9prMliBDwKBPcs9ZDBrJYJm2LCCXTMnc",
-      "createAt": 1599148236342,
-      "id": 9
+      "username": "joblack",
+      "email": "jo@black.com",
+      "password": "AZERTY",
+      "avatar": "https://icon-library.com/images/avatar-icon-png/avatar-icon-png-26.jpg",
+      "id": 2
     }
   ]
 }

@@ -1,139 +1,115 @@
 <template>
-  <div class="home">
-    <div class="bg"></div>
-    <div class="container myboxhome">
-      <div class="row mt-3 mb-5">
-        <div class="col-12 col-md-4 col-lg-2 offset-lg-5 offset-md-4 offset-sm-3 mb-5">
-          <!-- Grid column -->
-          <div class="col-12 mb-lg-3 mb-1">
-    
-            <!-- Card -->
-            <div class="card hoverable">
-    
-              <!-- Card image -->
-              <a><img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="Card image cap"></a>
-              <!-- <a href="single-photo.html"><img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="Card image cap">
-              </a> -->
-    
-              <!-- Card content -->
-              <div class="card-body">
-    
-                <!-- Title -->
-                <p class="card-title text-uppercase text-center font-weight-bold mt-1 mb-1">My Photo</p>
-                <!-- Text -->
-                <p class="text-muted text-center font-small">
-                  <small class="text-muted blue-text" style="cursor: pointer" title="edit"><i class="fas fa-edit fa-lg"></i></small>
-                <small class="text-muted red-text ml-1" style="cursor: pointer" title="delete"><i class="fas fa-trash-alt fa-lg"></i></small>
-                <small class="text-muted orange-text ml-1" style="cursor: pointer" title="resize"><i class="fas fa-crop-alt fa-lg"></i></small>
-                </p>
-    
-              </div>
-    
-            </div>
-            <!-- Card -->
-    
-          </div>
-          <!-- Grid column -->
-        </div>
-      </div>
-      <div class="row box-index">
-        <div class="col-lg-7 col-md-12 text-center pt-5 mb-md-5 mt-1 mb-5 mb-sm-5">
-          <div class="animated-title">
-            <div class="text-top">
-              <div>
-                <span>une gallery</span>
-                <span>de toutes vos photos</span>
-              </div>
-            </div>
-            <div class="text-bottom">
-              <div>professionnelle</div>
-            </div>
-          </div>
-          <!-- <p class="align-middle"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quidem perferendis. Eius eaque vero minus, iure delectus optio explicabo, veritatis numquam sequi, ad temporibus eveniet fuga nobis mollitia quaerat tempore!</p>
-          <p class="align-middle"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quidem perferendis. Eius eaque vero minus, iure delectus optio explicabo, veritatis numquam sequi, ad temporibus eveniet fuga nobis mollitia quaerat tempore!</p>
-          <p class="align-middle"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quidem perferendis. Eius eaque vero minus, iure delectus optio explicabo, veritatis numquam sequi, ad temporibus eveniet fuga nobis mollitia quaerat tempore!</p>
-          <p class="align-middle"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quidem perferendis. Eius eaque vero minus, iure delectus optio explicabo, veritatis numquam sequi, ad temporibus eveniet fuga nobis mollitia quaerat tempore!</p> -->
-        </div>
-        <div class="col-lg-4 col-md-12 offset-lg-1 mt-md-5 mt-sm-5 mt-xs-5">
-            <!-- login -->
-            <div class="row rotate-vert-center" v-show="login">
-              <div class="col-lg-12">
-                <!-- Default form login -->
-                <form class="text-center border border-dark border-top-0 border-right-0 p-3" action="#!">
-
-                  <p class="h4 mb-4">Sign in</p>
-
-                  <!-- Email -->
-                  <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Username or E-mail">
-
-                  <!-- Password -->
-                  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
-
-                  <div class="d-flex justify-content-around">
-                      <div>
-                          <!-- Forgot password -->
-                          <a href="">Forgot password?</a>
+  <div class="home py-0 my-0">
+   <!-- Main navigation -->
+          <header>
+            <!-- Full Page Intro -->
+            <div class="view" style="background-image: url('undraw_online_gallery_dmv3.svg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+              <!-- Mask & flexbox options-->
+              <div class="mask  d-flex justify-content-center align-items-center">
+                <!-- Content -->
+                <div class="container mt-5">
+                  <!--Grid row-->
+                  <div class="row pt-lg-5 mt-lg-5 mt-5">
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-5 mt-5 white-text text-center text-md-left wow fadeInLeft"
+                      data-wow-delay="0.3s">
+                      <div class="animated-title">
+                        <div class="text-top">
+                          <div>
+                            <span>une gallery</span>
+                            <span>de toutes vos photos</span>
+                          </div>
+                        </div>
+                        <div class="text-bottom">
+                          <div>professionnelle</div>
+                        </div>
+                      
                       </div>
+                      <!-- <a class="btn btn-outline-white btn-rounded">Learn more</a> -->
+                    </div>
+                    <!--Grid column-->
+                    <!--Grid column-->
+                    <div class="col-md-6 col-xl-5 offset-xl-1 mt-5 mb-4">
+                      <!--Form login-->
+                        <div class="rotate-vert-center" v-show="login">
+                            <form class="text-center rounded p-3 white hoverable" action="#!">
+
+                                <p class="h4 mb-4">Sign in</p>
+            
+                                <!-- Email -->
+                                <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Username or E-mail">
+            
+                                <!-- Password -->
+                                <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+            
+                                <div class="d-flex justify-content-around">
+                                    <div>
+                                        <!-- Forgot password -->
+                                        <a href="">Forgot password?</a>
+                                    </div>
+                                </div>
+            
+                                <!-- Sign in button -->
+                                <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+            
+                                <!-- Register -->
+                                <p>Not a member?
+                                    <a href="" v-on:click.prevent="isRegister()">Register</a>
+                                </p>
+            
+                            </form>
+                        </div>
+                      <!--/.Form login-->
+
+                        <!--Form register-->
+                        <div class="rotate-vert-center" v-show="register">
+                            <form class="text-center rounded p-3 white hoverable" action="#!">
+
+                                <p class="h4 mb-4">Sign up</p>
+            
+                                
+            
+                                <!-- Username -->
+                                <input type="text" id="defaultRegisterFormUsername" class="form-control mb-4" v-model="username"  placeholder="Username">
+            
+                                <!-- E-mail -->
+                                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" v-model="email"  placeholder="E-mail">
+            
+                                <!-- Password -->
+                                <input type="password" id="defaultRegisterFormPassword" class="form-control" v-model="password" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                                <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                                    At least 8 characters and 1 digit
+                                </small>
+            
+                                <!-- Re-Password -->
+                                <input type="password" id="" class="form-control" v-model="rePassword" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                                <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                                    passwords are different
+                                </small>
+            
+                                <!-- Sign up button -->
+                                <button class="btn btn-info my-4 btn-block" v-on:click.prevent="addUser()" type="submit">Sign in</button>
+            
+                                <!-- login -->
+                                <p>You are a member?
+                                    <a href="" v-on:click.prevent="isLogin()">login</a>
+                                </p>
+            
+                            </form>
+                        </div>
+                        <!--/.Form register-->
+                    </div>
+                    <!--Grid column-->
                   </div>
-
-                  <!-- Sign in button -->
-                  <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
-
-                  <!-- Register -->
-                  <p>Not a member?
-                      <a href="" v-on:click.prevent="isRegister()">Register</a>
-                  </p>
-
-                </form>
-                <!-- Default form login -->
-              </div>
-            </div>
-
-            <!-- register -->
-            <div class="row rotate-vert-center" v-show="register">
-              <div class="col-lg-12">
-                  <!-- Default form register -->
-                  <form class="text-center border border-dark border-top-0 border-right-0 p-3" action="#!">
-
-                    <p class="h4 mb-4">Sign up</p>
-
-                    
-
-                    <!-- Username -->
-                    <input type="text" id="defaultRegisterFormUsername" class="form-control mb-4" v-model="username"  placeholder="Username">
-
-                    <!-- E-mail -->
-                    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" v-model="email"  placeholder="E-mail">
-
-                    <!-- Password -->
-                    <input type="password" id="defaultRegisterFormPassword" class="form-control" v-model="password" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                        At least 8 characters and 1 digit
-                    </small>
-
-                    <!-- Re-Password -->
-                    <input type="password" id="" class="form-control" v-model="rePassword" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                        passwords are different
-                    </small>
-
-                    <!-- Sign up button -->
-                    <button class="btn btn-info my-4 btn-block" v-on:click.prevent="addUser()" type="submit">Sign in</button>
-
-                    <!-- login -->
-                    <p>You are a member?
-                        <a href="" v-on:click.prevent="isLogin()">login</a>
-                    </p>
-
-                  </form>
-                  <!-- Default form register -->
+                  <!--Grid row-->
                 </div>
+                <!-- Content -->
+              </div>
+              <!-- Mask & flexbox options-->
             </div>
-        </div>
-      </div>
-
-        
-    </div>
+            <!-- Full Page Intro -->
+          </header>
+          <!-- Main navigation -->
   </div>
 </template>
 
@@ -189,8 +165,14 @@ export default {
 
 <style scoped>
 
+    
+  
+    h6 {
+      line-height: 1.7;
+    }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+    /* TEXT ANIMATE */
+    @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 @keyframes showTopText {
   0% { transform: translate3d(0, 100%, 0); }
   40%, 60% { transform: translate3d(0, 50%, 0); }
@@ -236,7 +218,7 @@ export default {
   transform: translate(0, 100%);
 }
 .animated-title > div.text-top div span:first-child {
-  color: #767676;
+  color: #33b5e5;
 }
 .animated-title > div.text-bottom {
   bottom: 0;
@@ -285,4 +267,11 @@ export default {
             transform: rotateY(360deg);
   }
 }
+
+.mask{
+     background: #E0EAFC !important;
+      background: -webkit-linear-gradient(to left, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+  }
 </style>

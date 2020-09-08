@@ -1,5 +1,113 @@
 <template>
-  <div class="home py-0 my-0">
+  <div class="home">
+
+    <!-- Main navigation -->
+    <header>
+
+      <!-- Full Page Intro -->
+      <div class="view grey lighten-3">
+        <!-- Mask & flexbox options-->
+        <div class="mask">
+          <!-- Content -->
+          <div class="container h-100">
+            <!--Grid row-->
+            <div class="row align-items-center h-100">
+                <!--Grid column-->
+                <div class="col-md-6">
+                  <h1 class="mb-4">Une gallerie de <br><span class="cyan-text">toutes vos photos</span><br>professionelles.</h1>
+                  <p class="mb-4 pb-2 dark-grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, culpa qui officia deserunt laborum fuga similique mollit id quos aperiam proident non ut rerum debitis.</p>
+                  <button type="button" class="btn btn-primary btn-rounded btn-md ml-md-0">LOGIN</button>
+                  <button type="button" class="btn btn-outline-grey btn-rounded btn-md">REGISTER</button>
+                </div>
+                <!--Grid column-->
+              <!--Grid column-->
+              <div class="col-md-6">
+                <img src="undraw_online_gallery_dmv3.svg" alt="" class="img-fluid">
+
+                <!--Form login-->
+                  <div class="rotate-vert-center" v-show="login">
+                    <form class="text-center rounded p-3 white hoverable" action="#!">
+
+                      <p class="h4 mb-4">Sign in</p>
+  
+                      <!-- Email -->
+                      <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Username or E-mail">
+  
+                      <!-- Password -->
+                      <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+  
+                      <div class="d-flex justify-content-around">
+                          <div>
+                              <!-- Forgot password -->
+                              <a href="">Forgot password?</a>
+                          </div>
+                      </div>
+  
+                      <!-- Sign in button -->
+                      <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+  
+                      <!-- Register -->
+                      <p>Not a member?
+                          <a href="" v-on:click.prevent="isRegister()">Register</a>
+                      </p>
+    
+                    </form>
+                  </div>
+                <!--/.Form login-->
+
+                <!--Form register-->
+                  <div class="rotate-vert-center" v-show="register">
+                    <form class="text-center rounded p-3 white hoverable" action="#!">
+
+                      <p class="h4 mb-4">Sign up</p>
+
+                      
+
+                      <!-- Username -->
+                      <input type="text" id="defaultRegisterFormUsername" class="form-control mb-4" v-model="username"  placeholder="Username">
+
+                      <!-- E-mail -->
+                      <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" v-model="email"  placeholder="E-mail">
+
+                      <!-- Password -->
+                      <input type="password" id="defaultRegisterFormPassword" class="form-control" v-model="password" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                      <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                          At least 8 characters and 1 digit
+                      </small>
+
+                      <!-- Re-Password -->
+                      <input type="password" id="" class="form-control" v-model="rePassword" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                      <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                          passwords are different
+                      </small>
+
+                      <!-- Sign up button -->
+                      <button class="btn btn-info my-4 btn-block" v-on:click.prevent="addUser()" type="submit">Sign in</button>
+
+                      <!-- login -->
+                      <p>You are a member?
+                          <a href="" v-on:click.prevent="isLogin()">login</a>
+                      </p>
+
+                    </form>
+                  </div>
+                <!--/.Form register-->
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </div>
+          <!-- Content -->
+        </div>
+        <!-- Mask & flexbox options-->
+      </div>
+      <!-- Full Page Intro -->
+      
+    </header>
+    <!-- Main navigation -->
+
+
+
    <!-- Main navigation -->
           <header>
             <!-- Full Page Intro -->

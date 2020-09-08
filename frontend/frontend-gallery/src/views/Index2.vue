@@ -1,7 +1,21 @@
 <template>
   <div class="index2">
     <my-header></my-header>
-    <div class="container ">
+    <div class="container">
+      <div v-if="!photos" class="row mt-5 py-5 px-5" >
+        <div class="col-12 my-5 py-5 z-depth-1 h-100 blue lighten-4">
+          
+          <!--Section: Content-->
+          <section class="text-center px-md-5 mx-md-5 dark-grey-text ">
+
+            <h1>vous n'avez aucune photos </h1>
+            <router-link class="btn btn-success btn-md mt-3 waves-effect" to="/add-photo">Add Photo</router-link>
+            <!-- <a class="btn btn-outline-info btn-md mt-3 waves-effect" href="#" role="button">Download<i class="fa fa-download ml-1"></i></a> -->
+
+          </section>
+          <!--Section: Content-->
+        </div>
+      </div>
         <div class="row">
             <div class="mt-5">
 
@@ -9,7 +23,7 @@
                 <section class="text-center">
               
                   <!-- Section heading -->
-                  <h3 class="font-weight-bold mb-5">My Photos</h3>
+                  <h3 class="font-weight-bold mb-5" v-if="photos">My Photos</h3>
               
                     <!-- Grid row -->
                   <div class="row">
@@ -52,7 +66,7 @@
         </div>
 
         <!-- pagination -->
-        <div class="row mb-5 mt-2">
+        <div class="row mb-5 mt-2" v-if="photos">
             <div class="col-lg-4 offset-lg-4">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination pg-blue">
@@ -76,7 +90,7 @@
             </div>
         </div>
     </div>
-    <my-footer></my-footer>
+    <my-footer v-if="photos"></my-footer>
   </div>
 </template>
 
@@ -95,6 +109,7 @@ export default {
   data(){
     return{
       photos: null,
+      imgEmpty: '/images/undraw_empty_xct9.svg',
     }
   },
   methods:{
@@ -114,6 +129,6 @@ export default {
 }
 </script>
 
-<style lang="" scoped>
+<style  scoped>
 
 </style>
